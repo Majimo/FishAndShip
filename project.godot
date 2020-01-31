@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FishAndShip"
-run/main_scene="res://scenes/MainWorld.tscn"
+run/main_scene="res://scenes/Perso.tscn"
 config/icon="res://icon.png"
 
 [rendering]
