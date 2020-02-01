@@ -35,7 +35,7 @@ position = Vector2( 470.588, -239.092 )
 script = ExtResource( 6 )
 
 [node name="Dropzone" parent="." instance=ExtResource( 7 )]
-position = Vector2( 679.778, 190.943 )
+position = Vector2( 799.912, 74.3078 )
 
 [node name="ZonesAReparer" type="Node2D" parent="."]
 script = ExtResource( 9 )
@@ -43,18 +43,18 @@ script = ExtResource( 9 )
 [node name="ZoneAReparer" parent="ZonesAReparer" groups=[
 "zoneAReparer",
 ] instance=ExtResource( 8 )]
-position = Vector2( 1024.06, 369.733 )
+position = Vector2( 1167.52, 327.745 )
 
 [node name="ZoneAReparer2" parent="ZonesAReparer" groups=[
 "zoneAReparer",
 ] instance=ExtResource( 8 )]
-position = Vector2( 826.944, 33.8242 )
+position = Vector2( 917.919, 51.3195 )
 moduleId = 1
 
 [node name="ZoneAReparer3" parent="ZonesAReparer" groups=[
 "zoneAReparer",
 ] instance=ExtResource( 8 )]
-position = Vector2( 1483.6, 141.129 )
+position = Vector2( 1483.6, 124.8 )
 moduleId = 2
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer" to="ZonesAReparer" method="_on_ZoneAReparer_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer2" to="ZonesAReparer" method="_on_ZoneAReparer2_module_repaired"]

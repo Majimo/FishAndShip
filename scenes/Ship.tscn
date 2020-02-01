@@ -1,185 +1,180 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/vaisseau/Sol.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ShipWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/vaisseau/DecorVaisseau.png" type="Texture" id=3]
+[ext_resource path="res://assets/vaisseau/TableauDeBord.png" type="Texture" id=4]
+[ext_resource path="res://assets/vaisseau/PorteDeSortie.png" type="Texture" id=5]
+[ext_resource path="res://assets/vaisseau/MurMilieu.png" type="Texture" id=6]
 
 [node name="Ship" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 289.487, 146.793 )
-scale = Vector2( 1.2, 1.2 )
+[node name="Sol" type="Sprite" parent="."]
+position = Vector2( 283.025, 148.085 )
 texture = ExtResource( 1 )
 
+[node name="MurMilieu" type="Sprite" parent="."]
+position = Vector2( 280.441, 147.328 )
+texture = ExtResource( 6 )
+
+[node name="TableauDeBord" type="Sprite" parent="."]
+position = Vector2( 279.148, 143.451 )
+texture = ExtResource( 4 )
+
+[node name="PorteDeSortie" type="Sprite" parent="."]
+position = Vector2( 283.025, 151.205 )
+texture = ExtResource( 5 )
+
+[node name="DecorVaisseau" type="Sprite" parent="."]
+position = Vector2( 281.733, 146.036 )
+texture = ExtResource( 3 )
+
 [node name="MursVaisseau" type="Node2D" parent="."]
+visible = false
 
 [node name="ShipWall" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -330.602, -269.945 )
-
-[node name="ShipWall5" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -295.709, -295.792 )
-
-[node name="ShipWall3" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -357.124, -253.762 )
-
-[node name="ShipWall4" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -408.818, -205.945 )
+position = Vector2( -196.198, -249.268 )
 
 [node name="ShipWall2" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -394.911, -143.604 )
+position = Vector2( -224.629, -226.005 )
+
+[node name="ShipWall3" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -247.892, -196.281 )
+
+[node name="ShipWall4" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -309.925, -157.511 )
+
+[node name="ShipWall5" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -295.709, -99.3546 )
 
 [node name="ShipWall6" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -420.758, -91.9094 )
+position = Vector2( -318.971, -74.8 )
 
 [node name="ShipWall7" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -446.605, -40.2153 )
+position = Vector2( -331.895, -45.0758 )
 
 [node name="ShipWall8" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -471.16, 7.60168 )
+position = Vector2( -346.111, -14.0594 )
 
 [node name="ShipWall9" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -469.867, 72.2194 )
+position = Vector2( -356.449, 15.6648 )
 
 [node name="ShipWall10" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -415.589, 109.698 )
+position = Vector2( -364.204, 59.6048 )
 
 [node name="ShipWall11" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -354.848, 131.668 )
+position = Vector2( -347.403, 111.299 )
 
 [node name="ShipWall12" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -291.523, 148.468 )
+position = Vector2( -285.37, 131.977 )
 
 [node name="ShipWall13" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -226.905, 158.807 )
+position = Vector2( -222.045, 147.485 )
 
 [node name="ShipWall14" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -162.287, 179.485 )
+position = Vector2( -158.719, 164.285 )
 
 [node name="ShipWall15" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -97.6697, 196.285 )
+position = Vector2( -99.2711, 174.624 )
 
 [node name="ShipWall16" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -38.2215, 214.378 )
+position = Vector2( -37.2381, 194.009 )
 
 [node name="ShipWall17" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 26.3962, 229.886 )
+position = Vector2( 24.7949, 213.395 )
 
 [node name="ShipWall18" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 85.8444, 242.81 )
+position = Vector2( 89.4125, 225.026 )
 
 [node name="ShipWall19" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 149.17, 257.026 )
+position = Vector2( 152.738, 239.242 )
 
 [node name="ShipWall20" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 212.495, 267.365 )
+position = Vector2( 213.478, 249.581 )
 
 [node name="ShipWall21" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 277.113, 278.996 )
+position = Vector2( 275.511, 261.212 )
 
 [node name="ShipWall22" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 339.146, 286.75 )
+position = Vector2( 336.252, 267.674 )
 
 [node name="ShipWall23" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -235.951, -323.241 )
+position = Vector2( 393.116, 257.335 )
 
 [node name="ShipWall24" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -172.626, -320.656 )
+position = Vector2( 420.255, 228.903 )
 
 [node name="ShipWall25" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -110.593, -305.148 )
+position = Vector2( 434.471, 194.009 )
 
 [node name="ShipWall26" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -48.5602, -283.178 )
+position = Vector2( 453.856, 156.531 )
 
 [node name="ShipWall27" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 13.4727, -261.208 )
+position = Vector2( 471.949, 119.053 )
 
 [node name="ShipWall28" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 76.7979, -265.085 )
+position = Vector2( 491.334, 78.99 )
 
 [node name="ShipWall29" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 146.585, -256.038 )
+position = Vector2( 510.72, 42.804 )
 
 [node name="ShipWall30" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 209.91, -239.238 )
+position = Vector2( 528.813, 7.91049 )
 
 [node name="ShipWall31" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 270.651, -225.022 )
+position = Vector2( 546.905, -21.8136 )
 
 [node name="ShipWall32" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 333.976, -214.683 )
+position = Vector2( 553.367, -78.6772 )
 
 [node name="ShipWall33" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 397.302, -195.298 )
+position = Vector2( 518.474, -99.3548 )
 
 [node name="ShipWall34" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 461.919, -174.62 )
+position = Vector2( 490.042, -108.401 )
 
 [node name="ShipWall35" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 525.245, -156.527 )
+position = Vector2( 451.271, -126.494 )
 
 [node name="ShipWall36" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 588.57, -133.265 )
+position = Vector2( 404.747, -136.833 )
 
 [node name="ShipWall37" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 593.739, -66.0623 )
+position = Vector2( 359.514, -149.757 )
 
 [node name="ShipWall38" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 570.477, -4.02936 )
+position = Vector2( 310.405, -163.973 )
 
 [node name="ShipWall39" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 538.168, 59.2959 )
+position = Vector2( 254.834, -171.727 )
 
 [node name="ShipWall40" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 507.151, 120.036 )
+position = Vector2( 226.402, -185.943 )
 
 [node name="ShipWall41" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 472.258, 179.485 )
+position = Vector2( 195.385, -198.866 )
 
 [node name="ShipWall42" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 443.826, 220.84 )
+position = Vector2( 142.399, -196.281 )
 
 [node name="ShipWall43" parent="MursVaisseau" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 402.471, 271.242 )
+position = Vector2( 82.9505, -206.62 )
+
+[node name="ShipWall44" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 31.2564, -204.035 )
+
+[node name="ShipWall45" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 9.28644, -214.374 )
+
+[node name="ShipWall46" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -12.6835, -236.344 )
+
+[node name="ShipWall47" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -46.2847, -237.637 )
+
+[node name="ShipWall48" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -92.8095, -247.975 )
+
+[node name="ShipWall49" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -136.749, -251.853 )
