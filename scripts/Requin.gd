@@ -11,18 +11,24 @@ extends Node2D
 #		- le joueur perd son objet.
 
 # temps pour gérer l'apparition du requin. est décrémenté.
+
+
+export(NodePath) var SpawnRandomZones
+export(NodePath) var player
+export var distanceactif=10
+
 var AppearationTime=0;
 var AnimationSpriteHandler=0;
 export var etat = "Idle"; #Idle, Roar
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	etat = "Idle"
-	$AnimationPlayer.play("RequinRoar")
+
+	
 	
 	pass # Replace with function body.
 	
-
-
+	
+var R2:CollisionShape2D
 
 		
 func BeginRoar():
@@ -30,25 +36,38 @@ func BeginRoar():
 	# choix d'une position aléatoire.
 	
 	
-	$AudioStreamPlayer.play();
+	
 
 func RandomPositionOutsideShip():
-	var windowsize = get_viewport().get_visible_rect().size;
-	var randomx = randf()*windowsize.x;
-	var randomy = randf()*windowsize.y;
+	print(SpawnRandomZones)
+	var ChildCount = get_node(SpawnRandomZones).get_child_count()
+	if(ChildCount>0):
+		var childrandom = round(rand_range(0,ChildCount))
+		position = get_node(SpawnRandomZones).get_child( childrandom).position
 	
-	#il faut vérifier qu'on soit pas dans le vaisseau, sinon on rerandomise
-	position =  Vector2(randomx, randomy);
+	
+		
+	
+	#Je check area2D
 	
 	
 
 func Roar():
 	print("roar")
+	$AudioStreamPlayer.play();
+	if(position.distance_to((get_node(player).position))<distanceactif):
+		print("touche")
 	
 	
-
-
-
+export var time=1.1;
+func _process(delta):
+	if (etat == "Idle"):
+		time-=delta;
+		if(time<0):
+			etat = "Roar"
+			$AnimationPlayer.play("RequinRoar")
+		
+	
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play("RequinRoar")
