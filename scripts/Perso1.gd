@@ -1,5 +1,7 @@
 extends "res://scripts/AbstractPerso.gd"
 
+signal peche_un_objet
+signal pose_un_objet
 
 func _ready():
 	$Sprite.play("bibou_rame")
@@ -21,7 +23,9 @@ func _physics_process(delta):
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('zonePeche'):
 		actionPersoAvecAttente('Je pêche grawh')
+		emit_signal("peche_un_objet")
 		
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):
 		actionPersoAvecAttente('Ca drop !')
+		emit_signal("pose_un_objet")

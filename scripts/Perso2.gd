@@ -1,6 +1,8 @@
 extends "res://scripts/AbstractPerso.gd"
 
 
+signal recupere_objet
+
 func _ready():
 	$Sprite.play("pouik_marche")
 
@@ -25,3 +27,4 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):
 		actionPersoAvecAttente('Ca récupère !')
+		emit_signal("recupere_objet")
