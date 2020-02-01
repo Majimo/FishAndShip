@@ -11,6 +11,10 @@ extends Node2D
 #		- le joueur perd son objet.
 
 # temps pour gérer l'apparition du requin. est décrémenté.
+
+
+export(NodePath) var SpawnRandomZones
+
 var AppearationTime=0;
 var AnimationSpriteHandler=0;
 export var etat = "Idle"; #Idle, Roar
@@ -21,8 +25,8 @@ func _ready():
 	
 	pass # Replace with function body.
 	
-
-
+	
+var R2:CollisionShape2D
 
 		
 func BeginRoar():
@@ -33,12 +37,16 @@ func BeginRoar():
 	$AudioStreamPlayer.play();
 
 func RandomPositionOutsideShip():
-	var windowsize = get_viewport().get_visible_rect().size;
-	var randomx = randf()*windowsize.x;
-	var randomy = randf()*windowsize.y;
+	print(SpawnRandomZones)
+	var ChildCount = get_node(SpawnRandomZones).get_child_count()
+	if(ChildCount>0):
+		var childrandom = round(rand_range(0,ChildCount))
+		position = get_node(SpawnRandomZones).get_child( childrandom).position
 	
-	#il faut vérifier qu'on soit pas dans le vaisseau, sinon on rerandomise
-	position =  Vector2(randomx, randomy);
+	
+		
+	
+	#Je check area2D
 	
 	
 
