@@ -22,10 +22,17 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('zonePeche'):
-		actionPersoAvecAttente('Je pêche grawh')
 		emit_signal("peche_un_objet")
+		$Sprite.play("bibou_peche")
+		$BibouPeche.play()
+		actionPersoAvecAttente('Je pêche grawh', 2)
 		
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):
-		actionPersoAvecAttente('Ca drop !')
 		emit_signal("pose_un_objet")
+		$DepotDitem.play()
+		actionPersoAvecAttente('Ca drop !', 1)
+
+func reset_player_animation():
+	.reset_player_animation()
+	$Sprite.play("bibou_rame")

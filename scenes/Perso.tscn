@@ -1,9 +1,23 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/Bibourame.png" type="Texture" id=1]
 [ext_resource path="res://scripts/AbstractPerso.gd" type="Script" id=2]
 [ext_resource path="res://assets/BibouPeche.png" type="Texture" id=3]
 [ext_resource path="res://assets/Pouik_Marche.png" type="Texture" id=4]
+[ext_resource path="res://assets/Pouik_Attend.png" type="Texture" id=5]
+[ext_resource path="res://sounds/Hamecon_dans_leau.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/Soudage.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/Choc.wav" type="AudioStream" id=8]
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 256, 300 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 512, 0, 256, 300 )
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -52,6 +66,11 @@ region = Rect2( 682, 0, 341, 256 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "pouik_marche",
@@ -59,20 +78,20 @@ animations = [ {
 }, {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "bibou_peche",
-"speed": 5.0
+"name": "bibou_rame",
+"speed": 4.5
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "bibou_rame",
-"speed": 5.0
+"name": "bibou_peche",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 15.9558, 16.0929 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 61.631, 34.0367 )
+extents = Vector2( 40.2207, 34.0367 )
 
 [node name="Perso" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -80,7 +99,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 10 )
-animation = "bibou_rame"
+animation = "idle"
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -96,8 +115,16 @@ shape = SubResource( 11 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 shape = SubResource( 12 )
+
+[node name="BibouPeche" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="PouikSoude" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="DepotDitem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
