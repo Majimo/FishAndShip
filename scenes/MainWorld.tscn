@@ -39,7 +39,6 @@ position = Vector2( 679.778, 190.943 )
 
 [node name="ZonesAReparer" type="Node2D" parent="."]
 script = ExtResource( 9 )
-modulesAReparer = 3
 
 [node name="ZoneAReparer" parent="ZonesAReparer" groups=[
 "zoneAReparer",

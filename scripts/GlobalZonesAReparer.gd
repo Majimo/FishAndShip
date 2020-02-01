@@ -1,10 +1,9 @@
 extends Node2D
 
-export (int) var modulesAReparer
+var modulesAReparer = 3
 var modulesRepares = 0
 
 func _process(delta):
-	print('modulesRepares', modulesRepares)
 	if modulesRepares == modulesAReparer:
 		get_tree().change_scene("res://scenes/WinOver.tscn")
 
