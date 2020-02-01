@@ -22,21 +22,15 @@ var AnimationSpriteHandler=0;
 export var etat = "Idle"; #Idle, Roar
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
-	
-	
 	pass # Replace with function body.
-	
-	
+
+
 var R2:CollisionShape2D
 
 		
 func BeginRoar():
 	etat = "Roar"
 	# choix d'une position aléatoire.
-	
-	
-	
 
 func RandomPositionOutsideShip():
 	print(SpawnRandomZones)
@@ -44,13 +38,7 @@ func RandomPositionOutsideShip():
 	if(ChildCount>0):
 		var childrandom = round(rand_range(0,ChildCount))
 		position = get_node(SpawnRandomZones).get_child( childrandom).position
-	
-	
-		
-	
-	#Je check area2D
-	
-	
+
 
 func Roar():
 	print("roar")
@@ -67,7 +55,6 @@ func _process(delta):
 			etat = "Roar"
 			$AnimationPlayer.play("RequinRoar")
 		
-	
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play("RequinRoar")
