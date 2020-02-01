@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.9558, 16.0929 )
 
-[node name="Perso" type="Area2D"]
+[node name="Perso" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -19,5 +19,4 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-[connection signal="area_entered" from="." to="." method="_on_Perso_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
