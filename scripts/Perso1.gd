@@ -13,7 +13,7 @@ func _physics_process(delta):
 	
 	move_and_collide((speed * delta) * direction)
 
-func _on_Perso_area_entered(area):
+func _on_Area2D_area_entered(area):
 	if area.is_in_group('zonePeche'):
 		print('Je pêche grawh !')
 		speed = 0
