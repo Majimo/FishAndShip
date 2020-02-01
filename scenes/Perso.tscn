@@ -17,38 +17,38 @@ region = Rect2( 512, 0, 256, 300 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 341, 256 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 341, 0, 341, 256 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 682, 0, 341, 256 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 378, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 756, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1134, 0, 378, 256 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 341, 256 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 341, 0, 341, 256 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 682, 0, 341, 256 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
@@ -57,14 +57,14 @@ animations = [ {
 "name": "pouik_marche",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "bibou_rame",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "bibou_peche",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "bibou_rame",
 "speed": 5.0
 } ]
 
@@ -99,5 +99,5 @@ shape = SubResource( 11 )
 visible = false
 shape = SubResource( 12 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]

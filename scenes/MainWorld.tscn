@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Eaux.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/Ship.tscn" type="PackedScene" id=2]
@@ -9,13 +9,15 @@
 [ext_resource path="res://scenes/Dropzone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/ZoneAReparer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/MainWorld.gd" type="Script" id=9]
-[ext_resource path="res://scripts/GlobalZonesAReparer.gd" type="Script" id=10]
+[ext_resource path="res://assets/objets/PlaqueDeFer.png" type="Texture" id=10]
+[ext_resource path="res://assets/objets/scotch.png" type="Texture" id=11]
+[ext_resource path="res://assets/objets/PlancheDeBois.png" type="Texture" id=12]
 
 [node name="MainWorld" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 769.201, 452.439 )
+position = Vector2( 772.344, 448.756 )
 scale = Vector2( 1.52811, 1.55005 )
 texture = ExtResource( 1 )
 
@@ -24,6 +26,9 @@ position = Vector2( 1034.81, 270.429 )
 
 [node name="ZonePeche" parent="." instance=ExtResource( 4 )]
 position = Vector2( 284.088, 691.62 )
+
+[node name="ZonePeche2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 688.272, 686.609 )
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2( 761.94, 446.803 )
@@ -37,13 +42,11 @@ position = Vector2( 470.588, -239.092 )
 script = ExtResource( 6 )
 
 [node name="Dropzone" parent="." instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 766.088, 101.134 )
 scale = Vector2( 1.25, 1.5 )
 
 [node name="ZonesAReparer" type="Node2D" parent="."]
 position = Vector2( -61.8167, 18.6616 )
-script = ExtResource( 9 )
 
 [node name="ZoneAReparer" parent="ZonesAReparer" groups=[
 "zoneAReparer",
@@ -64,6 +67,40 @@ moduleId = 1
 position = Vector2( 1428.78, 97.9736 )
 rotation = 0.211185
 moduleId = 2
+
+[node name="InventaireJ1" type="Node2D" parent="."]
+
+[node name="PlancheDeBois" type="Sprite" parent="InventaireJ1"]
+visible = false
+position = Vector2( 215.136, 855.358 )
+texture = ExtResource( 12 )
+
+[node name="PlaqueDeFer" type="Sprite" parent="InventaireJ1"]
+visible = false
+position = Vector2( 125.526, 854.872 )
+texture = ExtResource( 10 )
+
+[node name="Scotch" type="Sprite" parent="InventaireJ1"]
+visible = false
+position = Vector2( 47.6918, 857.15 )
+texture = ExtResource( 11 )
+
+[node name="InventaireJ2" type="Node2D" parent="."]
+
+[node name="PlancheDeBois2" type="Sprite" parent="InventaireJ2"]
+visible = false
+position = Vector2( 1492.14, 855.358 )
+texture = ExtResource( 12 )
+
+[node name="PlaqueDeFer2" type="Sprite" parent="InventaireJ2"]
+visible = false
+position = Vector2( 1402.53, 854.872 )
+texture = ExtResource( 10 )
+
+[node name="Scotch2" type="Sprite" parent="InventaireJ2"]
+visible = false
+position = Vector2( 1324.69, 857.15 )
+texture = ExtResource( 11 )
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer" to="ZonesAReparer" method="_on_ZoneAReparer_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer2" to="ZonesAReparer" method="_on_ZoneAReparer2_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer3" to="ZonesAReparer" method="_on_ZoneAReparer3_module_repaired"]
