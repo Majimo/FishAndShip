@@ -68,12 +68,12 @@ moduleId = 2
 [node name="TrucTypesRequins" type="Node" parent="."]
 
 [node name="Requin" parent="TrucTypesRequins" instance=ExtResource( 10 )]
-SpawnRandomZones = NodePath("../Node/SpawnRandomZoneExterieur")
-player = NodePath("../Players/Perso2")
+SpawnRandomZones = NodePath("../SpawnRandomZoneExterieur")
+player = NodePath("../../Players/Perso2")
 
 [node name="Requin2" parent="TrucTypesRequins" instance=ExtResource( 10 )]
-SpawnRandomZones = NodePath("../Node/SpawnRandomZoneExterieur")
-player = NodePath("../Players/Perso2")
+SpawnRandomZones = NodePath("../SpawnRandomZoneExterieur")
+player = NodePath("../../Players/Perso2")
 time = 0.6
 
 [node name="SpawnRandomZoneExterieur" type="Node" parent="TrucTypesRequins"]
@@ -103,8 +103,8 @@ position = Vector2( 176.983, 815.555 )
 position = Vector2( 131.541, 351.573 )
 
 [node name="Splorsh" parent="TrucTypesRequins" instance=ExtResource( 11 )]
-SpawnRandomZones = NodePath("../Node/SpawnRandomZoneInterieur")
-player = NodePath("../Players/Perso1")
+SpawnRandomZones = NodePath("../SpawnRandomZoneInterieur")
+player = NodePath("../../Players/Perso1")
 
 [node name="SpawnRandomZoneInterieur" type="Node" parent="TrucTypesRequins"]
 

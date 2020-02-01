@@ -119,7 +119,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 20 )
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.309764, 0.309764 )
 frames = SubResource( 5 )
 frame = 3
 
