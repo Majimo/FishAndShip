@@ -14,14 +14,16 @@ extends Node2D
 
 
 export(NodePath) var SpawnRandomZones
+export(NodePath) var player
+export var distanceactif=10
 
 var AppearationTime=0;
 var AnimationSpriteHandler=0;
 export var etat = "Idle"; #Idle, Roar
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	etat = "Idle"
-	$AnimationPlayer.play("RequinRoar")
+
+	
 	
 	pass # Replace with function body.
 	
@@ -34,7 +36,7 @@ func BeginRoar():
 	# choix d'une position aléatoire.
 	
 	
-	$AudioStreamPlayer.play();
+	
 
 func RandomPositionOutsideShip():
 	print(SpawnRandomZones)
@@ -52,11 +54,20 @@ func RandomPositionOutsideShip():
 
 func Roar():
 	print("roar")
+	$AudioStreamPlayer.play();
+	if(position.distance_to((get_node(player).position))<distanceactif):
+		print("touche")
 	
 	
-
-
-
+export var time=1.1;
+func _process(delta):
+	if (etat == "Idle"):
+		time-=delta;
+		if(time<0):
+			etat = "Roar"
+			$AnimationPlayer.play("RequinRoar")
+		
+	
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play("RequinRoar")
