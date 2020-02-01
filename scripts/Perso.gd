@@ -14,3 +14,12 @@ func _process(delta):
 		direction.y -= 1
 
 	position += (speed * delta) * direction
+
+func _on_Perso_area_entered(area):
+	if area.is_in_group('zonePeche'):
+		print('Je pêche grawh !')
+		speed = 0
+		$Timer.start()
+
+func _on_Timer_timeout():
+	speed = 150
