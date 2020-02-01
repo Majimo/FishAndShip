@@ -2,7 +2,7 @@ extends "res://scripts/AbstractPerso.gd"
 
 
 func _ready():
-	$Sprite.play("biou_rame")
+	$Sprite.play("bibou_rame")
 
 func _physics_process(delta):
 	var direction = Vector2()
