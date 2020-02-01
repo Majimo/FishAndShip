@@ -65,55 +65,57 @@ position = Vector2( 1428.78, 97.9736 )
 rotation = 0.211185
 moduleId = 2
 
-[node name="Requin" parent="." instance=ExtResource( 10 )]
-SpawnRandomZones = NodePath("../SpawnRandomZoneExterieur")
+[node name="TrucTypesRequins" type="Node" parent="."]
+
+[node name="Requin" parent="TrucTypesRequins" instance=ExtResource( 10 )]
+SpawnRandomZones = NodePath("../Node/SpawnRandomZoneExterieur")
 player = NodePath("../Players/Perso2")
 
-[node name="Requin2" parent="." instance=ExtResource( 10 )]
-SpawnRandomZones = NodePath("../SpawnRandomZoneExterieur")
+[node name="Requin2" parent="TrucTypesRequins" instance=ExtResource( 10 )]
+SpawnRandomZones = NodePath("../Node/SpawnRandomZoneExterieur")
 player = NodePath("../Players/Perso2")
 time = 0.6
 
-[node name="SpawnRandomZoneExterieur" type="Node" parent="."]
+[node name="SpawnRandomZoneExterieur" type="Node" parent="TrucTypesRequins"]
 
-[node name="Node2D" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 160.241, 153.066 )
 
-[node name="Node2D2" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D2" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 581.172, 124.366 )
 
-[node name="Node2D3" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D3" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 306.132, 559.648 )
 
-[node name="Node2D4" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D4" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 686.406, 736.63 )
 
-[node name="Node2D5" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D5" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 1097.77, 715.105 )
 
-[node name="Node2D6" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D6" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 1332.15, 801.205 )
 
-[node name="Node2D7" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D7" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 176.983, 815.555 )
 
-[node name="Node2D8" type="Node2D" parent="SpawnRandomZoneExterieur"]
+[node name="Node2D8" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneExterieur"]
 position = Vector2( 131.541, 351.573 )
 
-[node name="SpawnRandomZoneInterieur" type="Node" parent="."]
+[node name="Splorsh" parent="TrucTypesRequins" instance=ExtResource( 11 )]
+SpawnRandomZones = NodePath("../Node/SpawnRandomZoneInterieur")
+player = NodePath("../Players/Perso1")
 
-[node name="Node2D" type="Node2D" parent="SpawnRandomZoneInterieur"]
+[node name="SpawnRandomZoneInterieur" type="Node" parent="TrucTypesRequins"]
+
+[node name="Node2D" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneInterieur"]
 position = Vector2( 877.738, 224.816 )
 
-[node name="Node2D2" type="Node2D" parent="SpawnRandomZoneInterieur"]
+[node name="Node2D2" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneInterieur"]
 position = Vector2( 1272.36, 365.923 )
 
-[node name="Node2D3" type="Node2D" parent="SpawnRandomZoneInterieur"]
+[node name="Node2D3" type="Node2D" parent="TrucTypesRequins/SpawnRandomZoneInterieur"]
 position = Vector2( 1439.78, 282.215 )
-
-[node name="Splorsh" parent="." instance=ExtResource( 11 )]
-SpawnRandomZones = NodePath("../SpawnRandomZoneInterieur")
-player = NodePath("../Players/Perso1")
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer" to="ZonesAReparer" method="_on_ZoneAReparer_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer2" to="ZonesAReparer" method="_on_ZoneAReparer2_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer3" to="ZonesAReparer" method="_on_ZoneAReparer3_module_repaired"]
