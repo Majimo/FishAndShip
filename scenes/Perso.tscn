@@ -9,88 +9,88 @@
 [ext_resource path="res://sounds/Soudage.wav" type="AudioStream" id=7]
 [ext_resource path="res://sounds/Choc.wav" type="AudioStream" id=8]
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 256, 0, 256, 300 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 512, 0, 256, 300 )
-
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 256, 0, 256, 300 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 512, 0, 256, 300 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 378, 256 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 378, 0, 378, 256 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 756, 0, 378, 256 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1134, 0, 378, 256 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 341, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 682, 0, 341, 256 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 378, 256 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 378, 0, 378, 256 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 756, 0, 378, 256 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1134, 0, 378, 256 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 256, 300 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 512, 0, 256, 300 )
+
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "pouik_marche",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "bibou_rame",
 "speed": 4.5
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "bibou_peche",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "pouik_marche",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 15.9558, 16.0929 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 40.2207, 34.0367 )
 
 [node name="Perso" type="KinematicBody2D"]
@@ -98,8 +98,8 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 10 )
-animation = "idle"
+frames = SubResource( 12 )
+animation = "bibou_rame"
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -107,7 +107,7 @@ animation = "idle"
 "Perso",
 ]]
 visible = false
-shape = SubResource( 11 )
+shape = SubResource( 13 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "Dropzone",
@@ -115,7 +115,7 @@ shape = SubResource( 11 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 
 [node name="BibouPeche" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -126,5 +126,5 @@ stream = ExtResource( 7 )
 [node name="DepotDitem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
