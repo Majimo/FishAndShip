@@ -28,11 +28,6 @@ func _process(delta):
 		Roar(delta)
 	pass
 
-func ApparitionHandler(delta):
-	AppearationTime-=delta
-	if(AppearationTime<0):
-		AppearationTime=5
-		BeginRoar()
 		
 func BeginRoar():
 	etat = "Roar"

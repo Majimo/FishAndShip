@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Requin.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Requin.gd" type="Script" id=2]
@@ -34,7 +34,7 @@ animations = [ {
 
 [sub_resource type="Animation" id=6]
 resource_name = "RequinRoar"
-length = 2.0
+length = 6.0
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:frame")
@@ -112,19 +112,41 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0, 20 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 15 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.01, 0.74, 1.33 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 9.08744
 
 [node name="Requin" type="Node"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 0, 15 )
-scale = Vector2( 0.309764, 0.309764 )
+self_modulate = Color( 1, 1, 1, 0.0441176 )
+position = Vector2( 0, 20 )
+scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
-frame = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RequinRoar = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -3.8689, 10.8329 )
+scale = Vector2( 8, 8 )
+shape = SubResource( 7 )
+disabled = true
