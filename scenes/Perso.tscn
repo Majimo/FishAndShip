@@ -5,83 +5,83 @@
 [ext_resource path="res://assets/BibouPeche.png" type="Texture" id=3]
 [ext_resource path="res://assets/Pouik_Marche.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 378, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 756, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1134, 0, 378, 256 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 256, 0, 256, 300 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 512, 0, 256, 300 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 341, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 682, 0, 341, 256 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "bibou_peche",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "pouik_marche",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "bibou_rame",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 15.9558, 16.0929 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 31, 31 )
 
 [node name="Perso" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 8 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 10 )
 animation = "bibou_rame"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -90,7 +90,7 @@ playing = true
 "Perso",
 ]]
 visible = false
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "Dropzone",
@@ -98,7 +98,7 @@ shape = SubResource( 9 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
