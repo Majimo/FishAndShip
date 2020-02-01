@@ -1,4 +1,6 @@
-extends AnimatedSprite
+extends Node2D
+
+
 
 # Le requin apparait aléatoirement sur la scène, toutes les X secondes.
 # il y a 4 frames.  la première est plus longue et permet de voir ou va apparaitre le requin
@@ -15,18 +17,12 @@ export var etat = "Idle"; #Idle, Roar
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	etat = "Idle"
-	#play("default")
+	$AnimationPlayer.play("RequinRoar")
 	
 	pass # Replace with function body.
 	
 
 
-func _process(delta):
-	if ( etat == "Idle"):
-		ApparitionHandler(delta)
-	if ( etat == "Roar"):
-		Roar(delta)
-	pass
 
 		
 func BeginRoar():
@@ -35,17 +31,25 @@ func BeginRoar():
 	
 	
 	$AudioStreamPlayer.play();
-	
+
 func RandomPositionOutsideShip():
-	var windowsize = get_viewport().get_rect().size;
+	var windowsize = get_viewport().get_visible_rect().size;
 	var randomx = randf()*windowsize.x;
 	var randomy = randf()*windowsize.y;
+	
 	#il faut vérifier qu'on soit pas dans le vaisseau, sinon on rerandomise
-	position = RandomPositionOutsideShip();
+	position =  Vector2(randomx, randomy);
+	
+	
 
 func Roar():
-	$AnimatedSprite.play("default")
+	print("roar")
 	
 	
 
 
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	$AnimationPlayer.play("RequinRoar")
+	pass # Replace with function body.
