@@ -18,7 +18,6 @@ func _physics_process(delta):
 	move_and_collide((speed * delta) * direction)
 
 func _on_Area2D_area_entered(area):
-	print(area)
 	if area.is_in_group('zoneAReparer'):
 		actionPersoAvecAttente('Hop hop, on répare', 2)
 		area._on_Perso2_repairModule()
