@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/water.png" type="Texture" id=1]
+[ext_resource path="res://scenes/ZonePeche.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/ZonePeche.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -17,3 +19,7 @@ custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ZonePeche" parent="." instance=ExtResource( 2 )]
+position = Vector2( 310.792, 242.537 )
+script = ExtResource( 3 )
