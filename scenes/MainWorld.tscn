@@ -102,6 +102,8 @@ moduleId = 2
 [node name="VitreVaisseau" type="Sprite" parent="."]
 position = Vector2( 1317.98, 417.554 )
 texture = ExtResource( 10 )
+
+[node name="TrucTypesRequins" type="Node" parent="."]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer" to="ZonesAReparer" method="_on_ZoneAReparer_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer2" to="ZonesAReparer" method="_on_ZoneAReparer2_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer3" to="ZonesAReparer" method="_on_ZoneAReparer3_module_repaired"]
