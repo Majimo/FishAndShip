@@ -65,7 +65,7 @@ animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "bibou_peche",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]

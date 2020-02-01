@@ -102,7 +102,7 @@ script = ExtResource( 2 )
 [node name="zoneP" type="AnimatedSprite" parent="."]
 position = Vector2( 0.250351, -0.250343 )
 frames = SubResource( 17 )
-frame = 9
+frame = 15
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

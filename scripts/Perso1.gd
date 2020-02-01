@@ -21,7 +21,7 @@ func _physics_process(delta):
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('zonePeche'):
 		$Sprite.play("bibou_peche")
-		actionPersoAvecAttente('Je pêche grawh', 1)
+		actionPersoAvecAttente('Je pêche grawh', 2)
 		
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):
