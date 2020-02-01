@@ -1,6 +1,8 @@
 extends "res://scripts/AbstractPerso.gd"
 
 
+signal recupere_objet
+
 func _physics_process(delta):
 	var direction = Vector2()
 	$Sprite.play("pouik_marche")
@@ -25,3 +27,4 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):
 		actionPersoAvecAttente('Ca récupère !', 1)
+		emit_signal("recupere_objet")
