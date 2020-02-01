@@ -4,29 +4,29 @@
 [ext_resource path="res://scripts/Requin.gd" type="Script" id=2]
 [ext_resource path="res://sounds/roar.wav" type="AudioStream" id=3]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 512, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 512, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 512, 512, 512, 512 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 4.0
@@ -128,14 +128,15 @@ tracks/6/keys = {
 [sub_resource type="CircleShape2D" id=7]
 radius = 9.08744
 
-[node name="Requin" type="Node"]
+[node name="Requin" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.0441176 )
-position = Vector2( 0, 20 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 1 )
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 15 )
+scale = Vector2( 0.309764, 0.309764 )
+frames = SubResource( 5 )
+frame = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -150,3 +151,4 @@ position = Vector2( -3.8689, 10.8329 )
 scale = Vector2( 8, 8 )
 shape = SubResource( 7 )
 disabled = true
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
