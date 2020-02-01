@@ -1,5 +1,7 @@
 extends "res://scripts/AbstractPerso.gd"
 
+func _ready():
+	$Sprite.play("pouik_marche")
 
 func _physics_process(delta):
 	var direction = Vector2()
