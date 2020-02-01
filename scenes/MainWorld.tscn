@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/water.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Ship.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/Perso1.gd" type="Script" id=5]
 [ext_resource path="res://scripts/Perso2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/Dropzone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ZoneAReparer.tscn" type="PackedScene" id=8]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -34,3 +35,8 @@ script = ExtResource( 6 )
 
 [node name="Dropzone" parent="." instance=ExtResource( 7 )]
 position = Vector2( 679.778, 190.943 )
+
+[node name="ZoneAReparer" parent="." groups=[
+"zoneAReparer",
+] instance=ExtResource( 8 )]
+position = Vector2( 996.065, 418.72 )

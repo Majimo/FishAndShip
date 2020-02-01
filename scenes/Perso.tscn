@@ -81,7 +81,7 @@ script = ExtResource( 2 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 10 )
 animation = "bibou_rame"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -98,6 +98,7 @@ shape = SubResource( 11 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource( 12 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
