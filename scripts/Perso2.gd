@@ -16,9 +16,9 @@ func _physics_process(delta):
 
 	move_and_collide((speed * delta) * direction)
 
-# warning-ignore:unused_argument
-func _on_Perso_area_entered(area):
-	pass
+func _on_Area2D_area_entered(area):
+	if area.is_in_group('zoneAReparer'):
+		actionPersoAvecAttente('Hop hop, on répare')
 
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):

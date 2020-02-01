@@ -8,6 +8,7 @@
 [ext_resource path="res://scripts/Perso2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/Dropzone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Requin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/ZoneAReparer.tscn" type="PackedScene" id=9]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -38,3 +39,8 @@ position = Vector2( 684.443, 608.497 )
 
 [node name="Requin" parent="." instance=ExtResource( 8 )]
 position = Vector2( 679.778, 190.943 )
+
+[node name="ZoneAReparer" parent="." groups=[
+"zoneAReparer",
+] instance=ExtResource( 9 )]
+position = Vector2( 996.065, 418.72 )
