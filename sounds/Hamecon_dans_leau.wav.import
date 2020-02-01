@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hamecon_dans_leau.wav-73e54dad95ac743c7f68044db0ec173d.sample"
+
+[deps]
+
+source_file="res://sounds/Hamecon_dans_leau.wav"
+dest_files=[ "res://.import/Hamecon_dans_leau.wav-73e54dad95ac743c7f68044db0ec173d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -181,3 +181,90 @@ position = Vector2( -92.8095, -247.975 )
 
 [node name="ShipWall49" parent="MursVaisseau" instance=ExtResource( 2 )]
 position = Vector2( -136.749, -251.853 )
+
+[node name="ShipWall50" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -273.738, -202.744 )
+
+[node name="ShipWall51" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -241.43, -242.807 )
+
+[node name="ShipWall52" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -362.911, -26.9835 )
+
+[node name="ShipWall53" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -391.343, -2.42877 )
+
+[node name="ShipWall54" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -419.774, 27.2953 )
+
+[node name="ShipWall55" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -440.452, 62.1889 )
+
+[node name="ShipWall56" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -455.96, 98.3748 )
+
+[node name="ShipWall57" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -440.452, 125.514 )
+
+[node name="ShipWall58" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -417.19, 143.607 )
+
+[node name="ShipWall59" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -388.758, 159.115 )
+
+[node name="ShipWall60" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -359.034, 141.022 )
+
+[node name="ShipWall61" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -259.523, 155.238 )
+
+[node name="ShipWall62" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -228.506, 191.424 )
+
+[node name="ShipWall63" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -196.197, 205.64 )
+
+[node name="ShipWall64" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -153.55, 222.441 )
+
+[node name="ShipWall65" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -125.118, 236.657 )
+
+[node name="ShipWall66" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -83.7625, 249.58 )
+
+[node name="ShipWall67" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( -35.9455, 261.211 )
+
+[node name="ShipWall68" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 7.99454, 268.965 )
+
+[node name="ShipWall69" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 53.227, 279.304 )
+
+[node name="ShipWall70" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 53.227, 279.304 )
+
+[node name="ShipWall71" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 116.552, 281.889 )
+
+[node name="ShipWall72" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 172.124, 283.181 )
+
+[node name="ShipWall73" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 235.449, 284.474 )
+
+[node name="ShipWall74" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 287.143, 284.474 )
+
+[node name="ShipWall75" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 349.176, 297.397 )
+
+[node name="ShipWall76" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 371.146, 316.782 )
+
+[node name="ShipWall77" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 398.286, 321.952 )
+
+[node name="ShipWall78" parent="MursVaisseau" instance=ExtResource( 2 )]
+position = Vector2( 398.286, 321.952 )
