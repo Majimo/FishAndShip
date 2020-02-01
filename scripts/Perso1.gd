@@ -15,6 +15,8 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('zonePeche'):
-		print('Je pêche grawh !')
-		speed = 0
-		$Timer.start()
+		actionPersoAvecAttente('Je pêche grawh')
+		
+func _on_Area2D_area_entered_drop(area):
+	if area.is_in_group('dropZone'):
+		actionPersoAvecAttente('Ca drop !')

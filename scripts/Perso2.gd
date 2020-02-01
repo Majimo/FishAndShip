@@ -17,4 +17,7 @@ func _physics_process(delta):
 # warning-ignore:unused_argument
 func _on_Perso_area_entered(area):
 	pass
-		
+
+func _on_Area2D_area_entered_drop(area):
+	if area.is_in_group('dropZone'):
+		actionPersoAvecAttente('Ca récupère !')
