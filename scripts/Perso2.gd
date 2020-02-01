@@ -2,7 +2,7 @@ extends "res://scripts/AbstractPerso.gd"
 
 
 func _ready():
-	$Sprite.play("pouik_marche")
+	$Sprite.play("pouik_attend")
 
 func _physics_process(delta):
 	var direction = Vector2()
@@ -14,6 +14,8 @@ func _physics_process(delta):
 		direction.y += 1
 	if Input.is_action_pressed("ui_up2"):
 		direction.y -= 1
+		
+	$Sprite.play("pouik_marche")
 
 	move_and_collide((speed * delta) * direction)
 
