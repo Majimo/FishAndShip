@@ -1,5 +1,7 @@
 extends "res://scripts/AbstractPerso.gd"
 
+signal repairModule
+
 func _ready():
 	$Sprite.play("pouik_marche")
 
@@ -18,7 +20,8 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('zoneAReparer'):
-		actionPersoAvecAttente('Hop hop, on répare')
+		actionPersoAvecAttente('Hop hop, on répare', 2)
+		emit_signal("repairModule")
 
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):
