@@ -45,6 +45,7 @@ position = Vector2( 769.792, 451.378 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 583.176
 margin_top = 58.3176
 margin_right = 1443.18
@@ -56,10 +57,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 826.944
-margin_top = 253.098
-margin_right = 968.944
-margin_bottom = 319.098
+margin_left = 843.273
+margin_top = 264.762
+margin_right = 985.273
+margin_bottom = 330.762
 custom_fonts/font = SubResource( 2 )
 text = "Jouer"
 __meta__ = {
@@ -67,7 +68,7 @@ __meta__ = {
 }
 
 [node name="ToucheA" type="AnimatedSprite" parent="."]
-position = Vector2( 1070.71, 284.59 )
+position = Vector2( 915.587, 407.057 )
 frames = SubResource( 5 )
 
 [node name="ArriveeVaisseau" type="AudioStreamPlayer" parent="."]
