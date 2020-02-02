@@ -105,8 +105,9 @@ func repareZone1():
 		pouik_objet_tenu = null
 		emit_signal("zone1_est_repare")
 	else:
+		$Fail.play()
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
-		
+
 func repareZone2():
 	if pouik_tiens_objet == true and pouik_objet_tenu == objet_zone2:
 		pouik_tiens_objet = false
@@ -120,7 +121,9 @@ func repareZone2():
 		pouik_objet_tenu = null
 		emit_signal("zone2_est_repare")
 	else:
+		$Fail.play()
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
+
 func repareZone3():
 	if pouik_tiens_objet == true and pouik_objet_tenu == objet_zone3:
 		pouik_tiens_objet = false
@@ -134,7 +137,9 @@ func repareZone3():
 		pouik_objet_tenu = null
 		emit_signal("zone3_est_repare")
 	else:
+		$Fail.play()
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
+
 func perd_objet_par_obstacle(qui):  #requin ou acide.
 	if(qui=="Perso1"):
 		print("BIBOU est touché par un requinnnnnnnnnnnn")
@@ -156,17 +161,9 @@ func perd_objet_par_obstacle(qui):  #requin ou acide.
 			pouik_objet_tenu = null
 			# jouer une super animtion de perte
 			print(qui+" POUIK  a perdu son objet")
-		
-	
-	
-	
-	
-	
-
 
 func objet_aleatoire():
 	return objets[rand_range(0,2)]
-
 
 func _on_Musique_finished():
 	$Musique.play()

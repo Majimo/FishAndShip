@@ -49,19 +49,34 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("zoneAReparer1"):
-		emit_signal("repareZone1")
-	if area.is_in_group("zoneAReparer2"):
-		emit_signal("repareZone2")
-	if area.is_in_group("zoneAReparer3"):
-		emit_signal("repareZone3")
-		
-	if est_repare == true and area.is_in_group("zoneAReparer"):
 		$PouikSoude.play()
 		$Sprite.stop()
 		isSpecialAction = "pouik_soude"
 		$Sprite.play(isSpecialAction)
 		actionPersoAvecAttente('Hop hop, on répare', 2)
-		area._on_Perso2_repairModule(area)
+		emit_signal("repareZone1")
+	if area.is_in_group("zoneAReparer2"):
+		$PouikSoude.play()
+		$Sprite.stop()
+		isSpecialAction = "pouik_soude"
+		$Sprite.play(isSpecialAction)
+		actionPersoAvecAttente('Hop hop, on répare', 2)
+		emit_signal("repareZone2")
+	if area.is_in_group("zoneAReparer3"):
+		$PouikSoude.play()
+		$Sprite.stop()
+		isSpecialAction = "pouik_soude"
+		$Sprite.play(isSpecialAction)
+		actionPersoAvecAttente('Hop hop, on répare', 2)
+		emit_signal("repareZone3")
+		
+#	if est_repare == true and area.is_in_group("zoneAReparer"):
+#		$PouikSoude.play()
+#		$Sprite.stop()
+#		isSpecialAction = "pouik_soude"
+#		$Sprite.play(isSpecialAction)
+#		actionPersoAvecAttente('Hop hop, on répare', 2)
+#		area._on_Perso2_repairModule(area)
 
 func zone_est_repare(est_repare):
 	return true
