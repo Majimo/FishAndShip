@@ -23,7 +23,7 @@ func _physics_process(delta):
 	var direction = Vector2()
 	
 	if Input.is_action_pressed("ui_right2"):
-		$Sprite.play("poutik_marche")
+		$Sprite.play("pouik_marche")
 		direction.x += 1
 		flipHSprite = true
 	if Input.is_action_pressed("ui_left2"):
