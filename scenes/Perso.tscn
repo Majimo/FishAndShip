@@ -9,40 +9,40 @@
 [ext_resource path="res://sounds/Bibou_content.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/players/Pouik_Attend (1).png" type="Texture" id=10]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 341, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 682, 0, 341, 256 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 428, 0, 214, 512 )
+region = Rect2( 1498, 0, 214, 512 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 642, 0, 214, 512 )
+region = Rect2( 1284, 0, 214, 512 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 856, 0, 214, 512 )
+region = Rect2( 0, 0, 214, 512 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 1070, 0, 214, 512 )
+region = Rect2( 214, 0, 214, 512 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -64,63 +64,63 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1134, 0, 378, 256 )
 
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 428, 0, 214, 512 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 642, 0, 214, 512 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 856, 0, 214, 512 )
+
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 1498, 0, 214, 512 )
+region = Rect2( 1070, 0, 214, 512 )
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 214, 512 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 214, 0, 214, 512 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 1284, 0, 214, 512 )
-
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 1 ), SubResource( 3 ) ],
 "loop": true,
 "name": "bibou_rame",
 "speed": 4.5
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "pouik_marche",
+"name": "pouik_soude",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "pouik_recupere",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "pouik_attend",
+"speed": 2.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "bibou_peche",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
-"name": "pouik_soude",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 20 ), SubResource( 21 ) ],
-"loop": true,
-"name": "pouik_attend",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 22 ) ],
-"loop": true,
-"name": "pouik_recupere",
+"name": "pouik_marche",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 15.9558, 16.0929 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 40.2207, 34.0367 )
 
 [node name="Perso" type="KinematicBody2D"]
@@ -128,7 +128,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 12 )
+frames = SubResource( 16 )
 animation = "pouik_recupere"
 
 [node name="Timer" type="Timer" parent="."]
@@ -137,7 +137,7 @@ animation = "pouik_recupere"
 "Perso",
 ]]
 visible = false
-shape = SubResource( 13 )
+shape = SubResource( 17 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "Dropzone",
@@ -146,7 +146,7 @@ shape = SubResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 18 )
 
 [node name="BibouPeche" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -160,6 +160,6 @@ stream = ExtResource( 8 )
 [node name="BibouContent" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
 [connection signal="finished" from="BibouPeche" to="." method="_on_BibouPeche_finished"]
