@@ -1,21 +1,54 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/objets/PlaqueDeFer.png" type="Texture" id=1]
 [ext_resource path="res://assets/objets/PlancheDeBois.png" type="Texture" id=2]
 [ext_resource path="res://scripts/ZoneAReparer.gd" type="Script" id=3]
 [ext_resource path="res://assets/objets/scotch.png" type="Texture" id=4]
+[ext_resource path="res://assets/objets/Flamme.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 41.4006, 40.4497 )
 
 [node name="ZoneAReparer" type="Area2D"]
 script = ExtResource( 3 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 13.3, -63.6501 )
+frames = SubResource( 5 )
+playing = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "zoneAReparer",
 ]]
-visible = false
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="Timer" type="Timer" parent="."]
 
