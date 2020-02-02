@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/EauEtOmbre.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Ship.tscn" type="PackedScene" id=2]
@@ -34,6 +34,8 @@
 [ext_resource path="res://assets/blobOmbre.png" type="Texture" id=32]
 [ext_resource path="res://scripts/Watering2D.shader" type="Shader" id=33]
 [ext_resource path="res://assets/cercleOmbre.png" type="Texture" id=34]
+[ext_resource path="res://sounds/Fail.wav" type="AudioStream" id=35]
+[ext_resource path="res://sounds/Crash_Vaisseau.wav" type="AudioStream" id=36]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 33 )
@@ -205,7 +207,8 @@ scale = Vector2( 0.972, 0.857 )
 "zoneAReparer",
 "zoneAReparer2",
 ] instance=ExtResource( 8 )]
-position = Vector2( 961.074, 15.1626 )
+position = Vector2( 961.074, 28.0861 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="ZoneAReparer3" parent="ZonesAReparer" groups=[
 "zoneAReparer",
@@ -379,6 +382,11 @@ volume_db = -5.0
 wait_time = 100.0
 
 [node name="Fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+
+[node name="CrashVaisseau" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+volume_db = 1.0
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer1" to="ZonesAReparer/ZoneAReparer1" method="_on_ZoneAReparer1_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer2" to="ZonesAReparer" method="_on_ZoneAReparer2_module_repaired"]
 [connection signal="module_repaired" from="ZonesAReparer/ZoneAReparer3" to="ZonesAReparer" method="_on_ZoneAReparer3_module_repaired"]

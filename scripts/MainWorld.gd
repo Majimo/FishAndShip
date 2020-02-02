@@ -22,6 +22,7 @@ var zone3_repare = false
 signal zone_est_repare
 
 func _ready():
+	$CrashVaisseau.play()
 	$VaisseauCoule.start()
 	$Musique.play()
 	
