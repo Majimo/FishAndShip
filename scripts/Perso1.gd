@@ -22,7 +22,9 @@ func _physics_process(delta):
 		direction.y += 1
 	if Input.is_action_pressed("ui_up"):
 		direction.y -= 1
-	$Sprite.flip_h = flipHSprite
+		
+	if speed > 0:
+		$Sprite.flip_h = flipHSprite
 	
 	move_and_collide((speed * delta) * direction)
 
