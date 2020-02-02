@@ -127,5 +127,5 @@ stream = ExtResource( 7 )
 [node name="DepotDitem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered_drop"]

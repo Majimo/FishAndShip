@@ -1,7 +1,7 @@
 extends "res://scripts/AbstractPerso.gd"
 
-
 signal recupere_objet
+
 
 func _physics_process(delta):
 	var direction = Vector2()
