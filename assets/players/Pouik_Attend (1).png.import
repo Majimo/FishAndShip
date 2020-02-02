@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pouik_Attend.png-e29709e8dbbfc3c787b68023c4fe966d.stex"
+path="res://.import/Pouik_Attend (1).png-3b30ac18c793ead0624fa98f5cccc4c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/players/Pouik_Attend.png"
-dest_files=[ "res://.import/Pouik_Attend.png-e29709e8dbbfc3c787b68023c4fe966d.stex" ]
+source_file="res://assets/players/Pouik_Attend (1).png"
+dest_files=[ "res://.import/Pouik_Attend (1).png-3b30ac18c793ead0624fa98f5cccc4c7.stex" ]
 
 [params]
 

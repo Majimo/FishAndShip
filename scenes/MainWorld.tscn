@@ -229,7 +229,7 @@ texture = ExtResource( 23 )
 visible = false
 texture = ExtResource( 24 )
 
-[node name="BibouLabel2" type="Label" parent="InventaireJ2"]
+[node name="PouikLabel" type="Label" parent="InventaireJ2"]
 margin_left = -24.4584
 margin_top = -62.5681
 margin_right = 23.5416
@@ -330,6 +330,7 @@ stream = ExtResource( 29 )
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 30 )
+volume_db = -5.0
 
 [node name="VaisseauCoule" type="Timer" parent="."]
 wait_time = 100.0

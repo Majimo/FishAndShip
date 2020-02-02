@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/objets/PlancheDeBois.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 48.0507, 42.3496 )
+extents = Vector2( 51.8507, 47.0996 )
 
 [node name="Dropzone" type="Area2D" groups=[
 "dropZone",
@@ -14,7 +14,7 @@ extents = Vector2( 48.0507, 42.3496 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -13.3, -7.60005 )
+position = Vector2( -13.3, 1.89997 )
 shape = SubResource( 1 )
 
 [node name="PlancheDeBois" type="Sprite" parent="."]

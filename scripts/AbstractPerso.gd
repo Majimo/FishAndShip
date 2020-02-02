@@ -14,3 +14,7 @@ func actionPersoAvecAttente(action, time):
 
 func reset_player_animation():
 	print('Reset de l\'animation')
+
+
+func _on_BibouPeche_finished():
+	$BibouContent.play()
