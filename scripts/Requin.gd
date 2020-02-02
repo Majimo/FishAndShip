@@ -42,9 +42,12 @@ func RandomPositionOutsideShip():
 func Roar():
 #	print("roar")
 	$AudioStreamPlayer.play();
-	if(position.distance_to((get_node(player).position))<distanceactif):
-#		print("touche")
-		pass
+	#print (  get_node(player).name +" position " + str(get_node(player).global_position))
+	#print (  name +" position " + str(global_position) )
+	#print ( get_node(player).name +" distance "+name+"  "+str(global_position.distance_to((get_node(player).global_position))))
+	if(global_position.distance_to((get_node(player).global_position))<distanceactif):
+		get_node('/root/MainWorld').perd_objet_par_obstacle(get_node(player).name)
+		print("touche")
 	
 export var time=1.1;
 func _process(delta):

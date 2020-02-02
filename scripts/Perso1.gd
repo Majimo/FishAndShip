@@ -3,20 +3,28 @@ extends "res://scripts/AbstractPerso.gd"
 signal peche_un_objet
 signal pose_un_objet
 
+var initialScale:Vector2
+var flipHSprite = false;
+
 func _ready():
 	$Sprite.play("bibou_rame")
+	initialScale = $Sprite.scale
 
 func _physics_process(delta):
 	var direction = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
+		flipHSprite = true
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
+		flipHSprite = false
 	if Input.is_action_pressed("ui_down"):
 		direction.y += 1
 	if Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 		
+	if speed > 0:
+		$Sprite.flip_h = flipHSprite
 	
 	move_and_collide((speed * delta) * direction)
 

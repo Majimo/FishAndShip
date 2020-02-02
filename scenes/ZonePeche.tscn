@@ -100,9 +100,24 @@ extents = Vector2( 2.13002, 3.22859 )
 script = ExtResource( 2 )
 
 [node name="zoneP" type="AnimatedSprite" parent="."]
-position = Vector2( 0.250351, -0.250343 )
+position = Vector2( -29.1832, -29.3066 )
+scale = Vector2( 1.02358, 1.02358 )
 frames = SubResource( 17 )
-frame = 5
+frame = 2
+playing = true
+
+[node name="zoneP2" type="AnimatedSprite" parent="."]
+position = Vector2( 24.7784, -19.4954 )
+scale = Vector2( 1.02358, 1.02358 )
+frames = SubResource( 17 )
+frame = 2
+playing = true
+
+[node name="zoneP3" type="AnimatedSprite" parent="."]
+position = Vector2( -5.7873, 26.9191 )
+scale = Vector2( 1.02358, 1.02358 )
+frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

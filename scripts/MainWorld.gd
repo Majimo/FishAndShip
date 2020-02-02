@@ -135,6 +135,37 @@ func repareZone3():
 		emit_signal("zone3_est_repare")
 	else:
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
+func perd_objet_par_obstacle(qui):  #requin ou acide.
+	if(qui=="Perso1"):
+		print("BIBOU est touché par un requinnnnnnnnnnnn")
+		if bibou_tiens_objet == true :
+			$InventaireJ1/PlancheDeBois.visible = false
+			$InventaireJ1/PlaqueDeFer.visible = false
+			$InventaireJ1/Scotch.visible = false
+			bibou_tiens_objet = false
+			bibou_objet_tenu = null
+			# jouer une superanimation de perte.
+			print(qui+" BIBOU a perdu son objet")
+	if(qui=="Perso2"):
+		print("POUIK est touché par de l'acide'")
+		if pouik_tiens_objet == true :
+			$InventaireJ2/PlancheDeBois2.visible = false
+			$InventaireJ2/PlaqueDeFer2.visible = false
+			$InventaireJ2/Scotch2.visible = false
+			pouik_tiens_objet = false
+			pouik_objet_tenu = null
+			# jouer une super animtion de perte
+			print(qui+" POUIK  a perdu son objet")
+		
+	
+	
+	
+	
+	
+
+
+func objet_aleatoire():
+	return objets[rand_range(0,2)]
 
 
 func _on_Musique_finished():
