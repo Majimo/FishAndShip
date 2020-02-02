@@ -8,7 +8,7 @@ size = 70
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+size = 52
 font_data = ExtResource( 1 )
 
 [node name="WinOver" type="Node2D"]
@@ -32,10 +32,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 716.14
-margin_top = 556.35
-margin_right = 841.14
-margin_bottom = 598.35
+margin_left = 679.983
+margin_top = 549.352
+margin_right = 874.983
+margin_bottom = 615.352
 custom_fonts/font = SubResource( 2 )
 text = "Rejouer"
 __meta__ = {

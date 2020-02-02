@@ -167,14 +167,12 @@ scale = Vector2( 0.972, 0.857 )
 "zoneAReparer",
 ] instance=ExtResource( 8 )]
 position = Vector2( 961.074, 15.1626 )
-moduleId = 1
 
 [node name="ZoneAReparer3" parent="ZonesAReparer" groups=[
 "zoneAReparer",
 ] instance=ExtResource( 8 )]
 position = Vector2( 1428.78, 97.9736 )
 rotation = 0.211185
-moduleId = 2
 
 [node name="InventaireJ1" type="Node2D" parent="."]
 position = Vector2( 54.415, 844.793 )

@@ -1,10 +1,10 @@
 extends Area2D
 
-export (int) var moduleId
-
+var isBurning
 signal module_repaired
 
 func _ready():
+	isBurning = true
 	$AnimatedSprite.play('burn')
 
 func _on_Perso2_repairModule():
@@ -12,4 +12,5 @@ func _on_Perso2_repairModule():
 	emit_signal('module_repaired')
 
 func _on_Timer_timeout():
+	isBurning = false
 	$AnimatedSprite.play('repaired')
