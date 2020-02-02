@@ -15,6 +15,10 @@ var objet_zone1
 var objet_zone2
 var objet_zone3
 
+var zone1_repare = false
+var zone2_repare = false
+var zone3_repare = false
+
 signal zone_est_repare
 
 func _ready():
@@ -42,19 +46,26 @@ func _process(delta):
 	elif timer < 20:
 		if $TempsRestant/Alarme.is_playing() == false:
 			$TempsRestant/Alarme.play()
+			
+	if zone1_repare == true and zone2_repare == true and zone3_repare == true :
+		get_tree().change_scene("res://scenes/WinOver.tscn")
 
 func peche_un_objet():
-	if bibou_tiens_objet == false :
-		bibou_tiens_objet = true
-		bibou_objet_tenu = objets[rand_range(0,3)]
-		if bibou_objet_tenu == objets[0] :
-			$InventaireJ1/PlancheDeBois.visible = true
-		if bibou_objet_tenu == objets[1] :
-			$InventaireJ1/PlaqueDeFer.visible = true
-		if bibou_objet_tenu == objets[2] :
-			$InventaireJ1/Scotch.visible = true
-	else :
-		print("bibou tiens déjà un objet")
+	bibou_tiens_objet = true
+	bibou_objet_tenu = objets[rand_range(0,3)]
+	if bibou_objet_tenu == objets[0] :
+		$InventaireJ1/PlancheDeBois.visible = true
+		$InventaireJ1/PlaqueDeFer.visible = false
+		$InventaireJ1/Scotch.visible = false
+	if bibou_objet_tenu == objets[1] :
+		$InventaireJ1/PlancheDeBois.visible = false
+		$InventaireJ1/PlaqueDeFer.visible = true
+		$InventaireJ1/Scotch.visible = false
+	if bibou_objet_tenu == objets[2] :
+		$InventaireJ1/PlancheDeBois.visible = false
+		$InventaireJ1/PlaqueDeFer.visible = false
+		$InventaireJ1/Scotch.visible = true
+
 
 func pose_un_objet():
 	if bibou_tiens_objet == true and objet_est_pose == false :
@@ -104,6 +115,7 @@ func repareZone1():
 			$InventaireJ2/Scotch2.visible = false
 		pouik_objet_tenu = null
 		emit_signal("zone1_est_repare")
+		zone1_repare = true
 	else:
 		$Fail.play()
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
@@ -120,6 +132,7 @@ func repareZone2():
 			$InventaireJ2/Scotch2.visible = false
 		pouik_objet_tenu = null
 		emit_signal("zone2_est_repare")
+		zone2_repare = true
 	else:
 		$Fail.play()
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
@@ -136,6 +149,7 @@ func repareZone3():
 			$InventaireJ2/Scotch2.visible = false
 		pouik_objet_tenu = null
 		emit_signal("zone3_est_repare")
+		zone3_repare = true
 	else:
 		$Fail.play()
 		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
