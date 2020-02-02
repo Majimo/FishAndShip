@@ -2,6 +2,7 @@ extends "res://scripts/AbstractPerso.gd"
 
 var isSpecialAction
 signal recupere_objet
+signal repare
 
 
 func _ready():
@@ -38,7 +39,9 @@ func _on_Area2D_area_entered(area):
 		isSpecialAction = "pouik_soude"
 		$Sprite.play("pouik_soude")
 		actionPersoAvecAttente('Hop hop, on répare', 2)
-		area._on_Perso2_repairModule()
+		print(area._on_Perso2_repairModule())
+		emit_signal("repare")
+
 
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):

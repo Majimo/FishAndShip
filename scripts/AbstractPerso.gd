@@ -13,7 +13,8 @@ func actionPersoAvecAttente(action, time):
 	$Timer.start(time)
 
 func reset_player_animation():
-	print('Reset de l\'animation')
+#	print('Reset de l\'animation')
+	pass
 
 
 func _on_BibouPeche_finished():

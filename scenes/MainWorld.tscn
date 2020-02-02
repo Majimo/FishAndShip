@@ -109,13 +109,13 @@ position = Vector2( 338.734, 711.477 )
 position = Vector2( 481.573, 276.156 )
 
 [node name="Rocher9" parent="Rochers" instance=ExtResource( 9 )]
-position = Vector2( 217.822, 102.577 )
+position = Vector2( 225.822, 62.5773 )
 
 [node name="Rocher7" parent="Rochers" instance=ExtResource( 9 )]
-position = Vector2( 269.517, 116.181 )
+position = Vector2( 277.517, 76.1811 )
 
 [node name="Rocher8" parent="Rochers" instance=ExtResource( 9 )]
-position = Vector2( 204.219, 143.389 )
+position = Vector2( 212.219, 103.389 )
 
 [node name="Rocher10" parent="Rochers" instance=ExtResource( 9 )]
 position = Vector2( 576.799, 633.935 )
@@ -156,7 +156,7 @@ texture = ExtResource( 14 )
 position = Vector2( -61.8167, 18.6616 )
 script = ExtResource( 27 )
 
-[node name="ZoneAReparer" parent="ZonesAReparer" groups=[
+[node name="ZoneAReparer1" parent="ZonesAReparer" groups=[
 "zoneAReparer",
 ] instance=ExtResource( 8 )]
 position = Vector2( 1161.69, 244.934 )
@@ -294,6 +294,7 @@ position = Vector2( 1272.36, 365.923 )
 position = Vector2( 1439.78, 282.215 )
 
 [node name="VitreVaisseau" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1317.98, 417.554 )
 texture = ExtResource( 10 )
 

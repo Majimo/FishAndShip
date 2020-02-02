@@ -1,6 +1,6 @@
 extends Node2D
 
-var objets = ['Plan', 'objet2', 'objet3']
+var objets = ['Planche','Plaque','Scotch']
 var objet_select
 
 var bibou_objet_tenu
@@ -11,6 +11,10 @@ var bibou_tiens_objet = false
 var pouik_tiens_objet = false
 var objet_est_pose = false
 
+var objet_zone1
+var objet_zone2
+var objet_zone3
+
 func _ready():
 	$VaisseauCoule.start()
 	$Musique.play()
@@ -20,7 +24,12 @@ func _ready():
 	$Players/Perso1.connect("pose_un_objet",self,"pose_un_objet")
 	
 	$Players/Perso2.connect("recupere_objet",self,"recupere_objet")
-
+	$Players/Perso2.connect("repare",self,"repare")
+	
+	objet_zone1 = $ZonesAReparer/ZoneAReparer1.materiaux_necessaire()
+	objet_zone2 = $ZonesAReparer/ZoneAReparer2.materiaux_necessaire()
+	objet_zone3 = $ZonesAReparer/ZoneAReparer3.materiaux_necessaire()
+			
 func _process(delta):
 	var timer = round($VaisseauCoule.time_left)
 	$TempsRestant/TempsRestantTime.text = str(timer)
@@ -33,7 +42,7 @@ func _process(delta):
 func peche_un_objet():
 	if bibou_tiens_objet == false :
 		bibou_tiens_objet = true
-		bibou_objet_tenu = objets[rand_range(0,2)]
+		bibou_objet_tenu = objets[rand_range(0,3)]
 		if bibou_objet_tenu == objets[0] :
 			$InventaireJ1/PlancheDeBois.visible = true
 		if bibou_objet_tenu == objets[1] :
@@ -49,7 +58,6 @@ func pose_un_objet():
 		bibou_tiens_objet = false
 		objet_pose = bibou_objet_tenu
 		bibou_objet_tenu = null
-		print(objet_pose)
 		if objet_pose == objets[0] :
 			$InventaireJ1/PlancheDeBois.visible = false
 			$Dropzone/PlancheDeBois.visible = true
@@ -80,8 +88,10 @@ func recupere_objet():
 	else :
 		print("pouik tiens déjà un objet ou aucun objet n'est posé")
 
-func objet_aleatoire():
-	return objets[rand_range(0,2)]
+func repare():
+#	if 
+#	print(objet_zone1)
+	pass
 
 func _on_Musique_finished():
 	$Musique.play()

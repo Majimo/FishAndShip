@@ -40,11 +40,11 @@ func RandomPositionOutsideShip():
 
 
 func Roar():
-	print("roar")
+#	print("roar")
 	$AudioStreamPlayer.play();
 	if(position.distance_to((get_node(player).position))<distanceactif):
-		print("touche")
-	
+#		print("touche")
+		pass
 	
 export var time=1.1;
 func _process(delta):
