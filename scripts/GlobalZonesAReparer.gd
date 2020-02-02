@@ -7,13 +7,16 @@ func _process(delta):
 		get_tree().change_scene("res://scenes/WinOver.tscn")
 
 
-func _on_ZoneAReparer_module_repaired():
+func _on_ZoneAReparer_module_repaired(area):
 	modulesRepares[0] = 1
+	area.remove_from_group('zoneAReparer')
 
 
-func _on_ZoneAReparer2_module_repaired():
+func _on_ZoneAReparer2_module_repaired(area):
 	modulesRepares[1] = 1
+	area.remove_from_group('zoneAReparer')
 
 
-func _on_ZoneAReparer3_module_repaired():
+func _on_ZoneAReparer3_module_repaired(area):
 	modulesRepares[2] = 1
+	area.remove_from_group('zoneAReparer')

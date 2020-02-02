@@ -44,7 +44,7 @@ func _on_Area2D_area_entered(area):
 		isSpecialAction = "pouik_soude"
 		$Sprite.play(isSpecialAction)
 		actionPersoAvecAttente('Hop hop, on répare', 2)
-		area._on_Perso2_repairModule()
+		area._on_Perso2_repairModule(area)
 
 func _on_Area2D_area_entered_drop(area):
 	if area.is_in_group('dropZone'):

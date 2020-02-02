@@ -7,9 +7,9 @@ func _ready():
 	isBurning = true
 	$AnimatedSprite.play('burn')
 
-func _on_Perso2_repairModule():
+func _on_Perso2_repairModule(area):
 	$Timer.start(2)
-	emit_signal('module_repaired')
+	emit_signal('module_repaired', area)
 
 func _on_Timer_timeout():
 	isBurning = false
