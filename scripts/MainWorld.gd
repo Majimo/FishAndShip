@@ -13,6 +13,7 @@ var objet_est_pose = false
 
 func _ready():
 	$VaisseauCoule.start()
+	$Musique.play()
 	
 	randomize()
 	$Players/Perso1.connect("peche_un_objet",self,"peche_un_objet")
@@ -21,8 +22,11 @@ func _ready():
 	$Players/Perso2.connect("recupere_objet",self,"recupere_objet")
 
 func _process(delta):
-	$TempsRestant/TempsRestantTime.text = str(round($VaisseauCoule.time_left))
-	if round($VaisseauCoule.time_left) < 20:
+	var timer = round($VaisseauCoule.time_left)
+	$TempsRestant/TempsRestantTime.text = str(timer)
+	if timer == 0:
+		get_tree().change_scene("res://scenes/GameOver.tscn")
+	elif timer < 20:
 		if $TempsRestant/Alarme.is_playing() == false:
 			$TempsRestant/Alarme.play()
 
@@ -78,3 +82,6 @@ func recupere_objet():
 
 func objet_aleatoire():
 	return objets[rand_range(0,2)]
+
+func _on_Musique_finished():
+	$Musique.play()

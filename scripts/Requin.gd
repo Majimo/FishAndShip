@@ -33,7 +33,6 @@ func BeginRoar():
 	# choix d'une position aléatoire.
 
 func RandomPositionOutsideShip():
-	print(SpawnRandomZones)
 	var ChildCount = get_node(SpawnRandomZones).get_child_count()
 	if(ChildCount>0):
 		var childrandom = round(rand_range(0,ChildCount - 1))
