@@ -115,6 +115,7 @@ shape = SubResource( 13 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource( 14 )
 
 [node name="BibouPeche" type="AudioStreamPlayer" parent="."]

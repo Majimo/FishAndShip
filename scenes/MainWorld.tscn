@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/EauEtOmbre.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Ship.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scripts/Perso2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/Dropzone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/ZoneAReparer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Rocher.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/vaisseau/Vitre.png" type="Texture" id=10]
 [ext_resource path="res://assets/vaisseau/DecorVaisseau.png" type="Texture" id=11]
 [ext_resource path="res://assets/vaisseau/TableauDeBord.png" type="Texture" id=12]
@@ -24,6 +25,7 @@
 [ext_resource path="res://assets/objets/PlaqueDeFer.png" type="Texture" id=23]
 [ext_resource path="res://assets/objets/scotch.png" type="Texture" id=24]
 [ext_resource path="res://assets/objets/PlancheDeBois.png" type="Texture" id=25]
+[ext_resource path="res://assets/objets/Inventaire.png" type="Texture" id=26]
 
 [node name="MainWorld" type="Node2D"]
 script = ExtResource( 22 )
@@ -54,10 +56,13 @@ texture = ExtResource( 20 )
 [node name="ZonesPeche" type="Node2D" parent="."]
 
 [node name="ZonePeche" parent="ZonesPeche" instance=ExtResource( 4 )]
-position = Vector2( 284.088, 691.62 )
+position = Vector2( 96.3561, 611.358 )
 
-[node name="ZonePeche2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 688.272, 686.609 )
+[node name="ZonePeche2" parent="ZonesPeche" instance=ExtResource( 4 )]
+position = Vector2( 545.433, 807.682 )
+
+[node name="ZonePeche3" parent="ZonesPeche" instance=ExtResource( 4 )]
+position = Vector2( 1130.39, 809.043 )
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2( 761.94, 446.803 )
@@ -69,6 +74,50 @@ script = ExtResource( 5 )
 [node name="Perso2" parent="Players" instance=ExtResource( 3 )]
 position = Vector2( 470.588, -239.092 )
 script = ExtResource( 6 )
+
+[node name="Rochers" type="Node2D" parent="."]
+
+[node name="Rocher" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 131.956, 457.086 )
+
+[node name="Rocher2" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 178.209, 454.366 )
+
+[node name="Rocher3" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 163.245, 482.933 )
+
+[node name="Rocher4" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 518.303, 604.007 )
+
+[node name="Rocher5" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 338.734, 711.477 )
+
+[node name="Rocher6" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 481.573, 276.156 )
+
+[node name="Rocher9" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 225.822, 62.5773 )
+
+[node name="Rocher7" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 277.517, 76.1811 )
+
+[node name="Rocher8" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 212.219, 103.389 )
+
+[node name="Rocher10" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 576.799, 633.935 )
+
+[node name="Rocher11" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 686.99, 590.403 )
+
+[node name="Rocher12" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 1073.34, 729.161 )
+
+[node name="Rocher13" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 1209.37, 643.458 )
+
+[node name="Rocher14" parent="Rochers" instance=ExtResource( 9 )]
+position = Vector2( 791.739, 843.433 )
 
 [node name="Dropzone" parent="." instance=ExtResource( 7 )]
 position = Vector2( 766.088, 101.134 )
@@ -114,42 +163,47 @@ rotation = 0.211185
 moduleId = 2
 
 [node name="InventaireJ1" type="Node2D" parent="."]
+position = Vector2( 54.415, 844.793 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ZoneInventaire" type="Sprite" parent="InventaireJ1"]
+position = Vector2( 1.36035, 0 )
+texture = ExtResource( 26 )
 
 [node name="PlancheDeBois" type="Sprite" parent="InventaireJ1"]
 visible = false
-position = Vector2( 215.136, 855.358 )
 texture = ExtResource( 25 )
 
 [node name="PlaqueDeFer" type="Sprite" parent="InventaireJ1"]
 visible = false
-position = Vector2( 125.526, 854.872 )
 texture = ExtResource( 23 )
 
 [node name="Scotch" type="Sprite" parent="InventaireJ1"]
 visible = false
-position = Vector2( 47.6918, 857.15 )
 texture = ExtResource( 24 )
 
 [node name="InventaireJ2" type="Node2D" parent="."]
+position = Vector2( 1482.81, 842.073 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ZoneInventaire" type="Sprite" parent="InventaireJ2"]
+texture = ExtResource( 26 )
 
 [node name="PlancheDeBois2" type="Sprite" parent="InventaireJ2"]
 visible = false
-position = Vector2( 1492.14, 855.358 )
 texture = ExtResource( 25 )
 
 [node name="PlaqueDeFer2" type="Sprite" parent="InventaireJ2"]
 visible = false
-position = Vector2( 1402.53, 854.872 )
 texture = ExtResource( 23 )
 
 [node name="Scotch2" type="Sprite" parent="InventaireJ2"]
 visible = false
-position = Vector2( 1324.69, 857.15 )
 texture = ExtResource( 24 )
-
-[node name="Dropzone2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 766.088, 101.134 )
-scale = Vector2( 1.25, 1.5 )
 
 [node name="TrucTypesRequins" type="Node" parent="."]
 

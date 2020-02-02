@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Demarrage_vaisseau.wav-833eacf12e05b2fccd9dc2541d38a959.sample"
+
+[deps]
+
+source_file="res://sounds/Demarrage_vaisseau.wav"
+dest_files=[ "res://.import/Demarrage_vaisseau.wav-833eacf12e05b2fccd9dc2541d38a959.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
