@@ -6,6 +6,9 @@
 [ext_resource path="res://assets/objets/scotch.png" type="Texture" id=4]
 [ext_resource path="res://assets/objets/Flamme.png" type="Texture" id=5]
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 41.4006, 40.4497 )
+
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 5 )
@@ -34,16 +37,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 41.4006, 40.4497 )
-
 [node name="ZoneAReparer" type="Area2D"]
 script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 13.3, -63.6501 )
-frames = SubResource( 5 )
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "zoneAReparer",
@@ -63,4 +58,11 @@ texture = ExtResource( 1 )
 [node name="Scotch" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 21.8501, -57.9501 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

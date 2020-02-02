@@ -10,9 +10,7 @@ var materiaux_select
 
 func _ready():
 	randomize()
-#	$AnimatedSprite.play('burn')
 	isBurning = true
-#	$AnimatedSprite.play('burn')
 
 func _on_Perso2_repairModule():
 	if reparer == true:
@@ -32,10 +30,6 @@ func materiaux_necessaire():
 	if materiaux_select == "Scotch":
 		$Scotch.visible = true
 	return materiaux_select
-	
-
-
-
 
 func _on_ZoneAReparer1_module_repaired():
 	pass # Replace with function body.
