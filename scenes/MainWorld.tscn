@@ -282,13 +282,13 @@ __meta__ = {
 
 [node name="Requin" parent="TrucTypesRequins" instance=ExtResource( 18 )]
 SpawnRandomZones = NodePath("../SpawnRandomZoneExterieur")
-player = NodePath("../../Players/Perso2")
-distanceactif = 300
+player = NodePath("../../Players/Perso1")
+distanceactif = 100
 
 [node name="Requin2" parent="TrucTypesRequins" instance=ExtResource( 18 )]
 SpawnRandomZones = NodePath("../SpawnRandomZoneExterieur")
-player = NodePath("../../Players/Perso2")
-distanceactif = 300
+player = NodePath("../../Players/Perso1")
+distanceactif = 100
 time = 0.6
 
 [node name="SpawnRandomZoneExterieur" type="Node" parent="TrucTypesRequins"]
@@ -319,8 +319,8 @@ position = Vector2( 131.541, 351.573 )
 
 [node name="Splorsh" parent="TrucTypesRequins" instance=ExtResource( 19 )]
 SpawnRandomZones = NodePath("../SpawnRandomZoneInterieur")
-player = NodePath("../../Players/Perso1")
-distanceactif = 300
+player = NodePath("../../Players/Perso2")
+distanceactif = 100
 
 [node name="SpawnRandomZoneInterieur" type="Node" parent="TrucTypesRequins"]
 

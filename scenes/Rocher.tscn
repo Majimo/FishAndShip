@@ -47,11 +47,13 @@ scale = Vector2( 1.95651, 2.29369 )
 position = Vector2( 56.6528, 1.24088 )
 scale = Vector2( 0.909, 0.909 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( 4.256, 1.241 )
 scale = Vector2( 0.909, 0.909 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
 flip_h = true
