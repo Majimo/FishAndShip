@@ -12,7 +12,7 @@ func _ready():
 	randomize()
 #	$AnimatedSprite.play('burn')
 	isBurning = true
-	$AnimatedSprite.play('burn')
+#	$AnimatedSprite.play('burn')
 
 func _on_Perso2_repairModule():
 	if reparer == true:
@@ -35,3 +35,7 @@ func materiaux_necessaire():
 	
 
 
+
+
+func _on_ZoneAReparer1_module_repaired():
+	pass # Replace with function body.

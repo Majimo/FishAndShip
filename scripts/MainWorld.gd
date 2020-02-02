@@ -15,6 +15,8 @@ var objet_zone1
 var objet_zone2
 var objet_zone3
 
+signal zone_est_repare
+
 func _ready():
 	$VaisseauCoule.start()
 	$Musique.play()
@@ -24,7 +26,9 @@ func _ready():
 	$Players/Perso1.connect("pose_un_objet",self,"pose_un_objet")
 	
 	$Players/Perso2.connect("recupere_objet",self,"recupere_objet")
-	$Players/Perso2.connect("repare",self,"repare")
+	$Players/Perso2.connect("repareZone1",self,"repareZone1")
+	$Players/Perso2.connect("repareZone2",self,"repareZone2")
+	$Players/Perso2.connect("repareZone3",self,"repareZone3")
 	
 	objet_zone1 = $ZonesAReparer/ZoneAReparer1.materiaux_necessaire()
 	objet_zone2 = $ZonesAReparer/ZoneAReparer2.materiaux_necessaire()
@@ -88,10 +92,50 @@ func recupere_objet():
 	else :
 		print("pouik tiens déjà un objet ou aucun objet n'est posé")
 
-func repare():
-#	if 
-#	print(objet_zone1)
-	pass
+func repareZone1():
+	if pouik_tiens_objet == true and pouik_objet_tenu == objet_zone1:
+		pouik_tiens_objet = false
+		$ZonesAReparer/ZoneAReparer1.visible = false
+		if pouik_objet_tenu == objets[0] :
+			$InventaireJ2/PlancheDeBois2.visible = false
+		if pouik_objet_tenu == objets[1] :
+			$InventaireJ2/PlaqueDeFer2.visible = false
+		if pouik_objet_tenu == objets[2] :
+			$InventaireJ2/Scotch2.visible = false
+		pouik_objet_tenu = null
+		emit_signal("zone1_est_repare")
+	else:
+		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
+		
+func repareZone2():
+	if pouik_tiens_objet == true and pouik_objet_tenu == objet_zone2:
+		pouik_tiens_objet = false
+		$ZonesAReparer/ZoneAReparer2.visible = false
+		if pouik_objet_tenu == objets[0] :
+			$InventaireJ2/PlancheDeBois2.visible = false
+		if pouik_objet_tenu == objets[1] :
+			$InventaireJ2/PlaqueDeFer2.visible = false
+		if pouik_objet_tenu == objets[2] :
+			$InventaireJ2/Scotch2.visible = false
+		pouik_objet_tenu = null
+		emit_signal("zone2_est_repare")
+	else:
+		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
+func repareZone3():
+	if pouik_tiens_objet == true and pouik_objet_tenu == objet_zone3:
+		pouik_tiens_objet = false
+		$ZonesAReparer/ZoneAReparer3.visible = false
+		if pouik_objet_tenu == objets[0] :
+			$InventaireJ2/PlancheDeBois2.visible = false
+		if pouik_objet_tenu == objets[1] :
+			$InventaireJ2/PlaqueDeFer2.visible = false
+		if pouik_objet_tenu == objets[2] :
+			$InventaireJ2/Scotch2.visible = false
+		pouik_objet_tenu = null
+		emit_signal("zone3_est_repare")
+	else:
+		print("pouik ne tiens pas le bon objet ou ne tiens pas d'objet")
+
 
 func _on_Musique_finished():
 	$Musique.play()
