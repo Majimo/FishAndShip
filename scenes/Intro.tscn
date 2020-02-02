@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/fonts/arial.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/arialbd.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Intro.gd" type="Script" id=3]
-[ext_resource path="res://assets/Pouik_Attend.png" type="Texture" id=4]
+[ext_resource path="res://assets/Menu.png" type="Texture" id=4]
 [ext_resource path="res://assets/ToucheA.png" type="Texture" id=5]
 [ext_resource path="res://sounds/Arret_vaisseau.wav" type="AudioStream" id=6]
 
@@ -40,11 +40,15 @@ __meta__ = {
 "_edit_vertical_guides_": [ 776.711 ]
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 769.792, 451.378 )
+texture = ExtResource( 4 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 347.573
-margin_top = 165.622
-margin_right = 1207.57
-margin_bottom = 309.622
+margin_left = 583.176
+margin_top = 58.3176
+margin_right = 1443.18
+margin_bottom = 202.318
 custom_fonts/font = SubResource( 1 )
 text = "Fish And Ship"
 __meta__ = {
@@ -52,10 +56,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 596.006
-margin_top = 417.554
-margin_right = 738.006
-margin_bottom = 483.554
+margin_left = 826.944
+margin_top = 253.098
+margin_right = 968.944
+margin_bottom = 319.098
 custom_fonts/font = SubResource( 2 )
 text = "Jouer"
 __meta__ = {
@@ -63,14 +67,10 @@ __meta__ = {
 }
 
 [node name="ToucheA" type="AnimatedSprite" parent="."]
-position = Vector2( 839.774, 449.046 )
+position = Vector2( 1070.71, 284.59 )
 frames = SubResource( 5 )
 
 [node name="ArriveeVaisseau" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 775.624, 700.978 )
-texture = ExtResource( 4 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="ArriveeVaisseau" to="." method="_on_ArriveeVaisseau_finished"]
