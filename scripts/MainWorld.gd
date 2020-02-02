@@ -12,12 +12,20 @@ var pouik_tiens_objet = false
 var objet_est_pose = false
 
 func _ready():
+	$VaisseauCoule.start()
+	
 	randomize()
 	$Players/Perso1.connect("peche_un_objet",self,"peche_un_objet")
 	$Players/Perso1.connect("pose_un_objet",self,"pose_un_objet")
 	
 	$Players/Perso2.connect("recupere_objet",self,"recupere_objet")
-	
+
+func _process(delta):
+	$TempsRestant/TempsRestantTime.text = str(round($VaisseauCoule.time_left))
+	if round($VaisseauCoule.time_left) < 20:
+		if $TempsRestant/Alarme.is_playing() == false:
+			$TempsRestant/Alarme.play()
+
 func peche_un_objet():
 	if bibou_tiens_objet == false :
 		bibou_tiens_objet = true
