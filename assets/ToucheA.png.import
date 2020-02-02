@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rocher (1).png-fd2980805b5dc4287681234fe80c275b.stex"
+path="res://.import/ToucheA.png-46a7f57033bc30961b3f507f8d947f5a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rocher (1).png"
-dest_files=[ "res://.import/Rocher (1).png-fd2980805b5dc4287681234fe80c275b.stex" ]
+source_file="res://assets/ToucheA.png"
+dest_files=[ "res://.import/ToucheA.png-46a7f57033bc30961b3f507f8d947f5a.stex" ]
 
 [params]
 

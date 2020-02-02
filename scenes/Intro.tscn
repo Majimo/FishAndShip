@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/fonts/arialbd.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Intro.gd" type="Script" id=3]
 [ext_resource path="res://assets/Pouik_Attend.png" type="Texture" id=4]
-[ext_resource path="res://sounds/Demarrage_vaisseau.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/ToucheA.png" type="Texture" id=5]
 [ext_resource path="res://sounds/Arret_vaisseau.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -34,22 +34,23 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 705.643
-margin_top = 444.38
-margin_right = 847.643
-margin_bottom = 510.38
+margin_left = 621.666
+margin_top = 421.053
+margin_right = 763.666
+margin_bottom = 487.053
 custom_fonts/font = SubResource( 2 )
 text = "Jouer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ToucheA" type="Sprite" parent="."]
+position = Vector2( 864.188, 448.199 )
+texture = ExtResource( 5 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 807.116, 744.133 )
 texture = ExtResource( 4 )
-
-[node name="DepartVaisseau" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
 
 [node name="ArriveeVaisseau" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
