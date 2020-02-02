@@ -2,10 +2,11 @@ extends "res://scripts/AbstractPerso.gd"
 
 var isSpecialAction
 signal recupere_objet
-
-
+var initialScale:Vector2
+var flipHSprite = false;
 func _ready():
 	isSpecialAction = ""
+	initialScale = $Sprite.scale
 	$Sprite.play("pouik_attend")
 
 func _physics_process(delta):
@@ -14,15 +15,19 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right2"):
 		$Sprite.play("pouik_marche")
 		direction.x += 1
+		flipHSprite = true
 	if Input.is_action_pressed("ui_left2"):
 		$Sprite.play("pouik_marche")
 		direction.x -= 1
+		flipHSprite = false
 	if Input.is_action_pressed("ui_down2"):
 		$Sprite.play("pouik_marche")
 		direction.y += 1
 	if Input.is_action_pressed("ui_up2"):
 		$Sprite.play("pouik_marche")
 		direction.y -= 1
+		
+	$Sprite.flip_h = flipHSprite
 	
 	if direction == Vector2(0, 0) && isSpecialAction == "":
 		$Sprite.play("pouik_attend")
