@@ -1,6 +1,9 @@
 extends Node2D
 
 
+func _ready():
+	$ToucheA.play()
+
 func _process(delta):
 	if Input.is_action_pressed("ui_accept"):
 		_on_Button_pressed()

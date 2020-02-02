@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/arial.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/arialbd.ttf" type="DynamicFontData" id=2]
@@ -14,6 +14,24 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 size = 52
 font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,25 +52,25 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 621.666
-margin_top = 421.053
-margin_right = 763.666
-margin_bottom = 487.053
+margin_left = 596.006
+margin_top = 417.554
+margin_right = 738.006
+margin_bottom = 483.554
 custom_fonts/font = SubResource( 2 )
 text = "Jouer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToucheA" type="Sprite" parent="."]
-position = Vector2( 864.188, 448.199 )
-texture = ExtResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 807.116, 744.133 )
-texture = ExtResource( 4 )
+[node name="ToucheA" type="AnimatedSprite" parent="."]
+position = Vector2( 839.774, 449.046 )
+frames = SubResource( 5 )
 
 [node name="ArriveeVaisseau" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 775.624, 700.978 )
+texture = ExtResource( 4 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="ArriveeVaisseau" to="." method="_on_ArriveeVaisseau_finished"]

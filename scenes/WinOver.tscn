@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/arial.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/WinOver.gd" type="Script" id=2]
@@ -11,6 +11,24 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 52
 font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="WinOver" type="Node2D"]
 script = ExtResource( 2 )
@@ -43,7 +61,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToucheA" type="Sprite" parent="."]
+[node name="ToucheA" type="AnimatedSprite" parent="."]
 position = Vector2( 871.186, 577.664 )
-texture = ExtResource( 3 )
+frames = SubResource( 5 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
